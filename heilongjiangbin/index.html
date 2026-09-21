@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑龙江宾县-官方综合信息门户与旅游生活指南</title>
+    <meta name="description" content="黑龙江宾县官方网站及综合服务平台，提供宾县概况、政务公开、旅游指南、特产美食、招商引资及便民服务信息。了解宾县历史、地理、交通及特色景点。">
+    <meta name="keywords" content="黑龙江宾县, 宾县, 哈尔滨宾县, 宾州, 宾县旅游, 宾县特产, 宾县政务">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5f2d; /* 宾县绿 */
+            --secondary-color: #97bc62;
+            --accent-color: #e6b800; /* 油菜花黄 */
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --radius: 6px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 5px solid var(--accent-color);
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar {
+            background-color: #f4f4f4;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            padding: 6px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/binxian/1600/900.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        /* Quick Access Grid */
+        .quick-access {
+            padding: 40px 0;
+            background: var(--white);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .access-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--secondary-color);
+        }
+
+        .access-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .access-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .access-card p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            padding: 50px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* News List */
+        .news-section {
+            margin-bottom: 50px;
+        }
+
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            background: var(--white);
+            padding: 15px;
+            border-radius: var(--radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s;
+        }
+
+        .news-item:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .news-date {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 70px;
+            margin-right: 20px;
+        }
+
+        .news-date .day {
+            font-size: 1.4rem;
+            font-weight: bold;
+            line-height: 1;
+            display: block;
+        }
+
+        .news-date .month {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .news-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .news-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-widget {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 8px;
+        }
+
+        .hot-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .hot-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .rank-num {
+            background-color: #eee;
+            color: #666;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+
+        .rank-num.top-1 { background-color: #ff4d4f; color: white; }
+        .rank-num.top-2 { background-color: #ff7a45; color: white; }
+        .rank-num.top-3 { background-color: #ffc53d; color: white; }
+
+        /* Featured Attractions */
+        .attractions {
+            background-color: var(--white);
+            padding: 50px 0;
+        }
+
+        .attraction-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .attraction-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .attraction-img {
+            height: 200px;
+            width: 100%;
+        }
+
+        .attraction-body {
+            padding: 20px;
+        }
+
+        .attraction-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .attraction-body p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .attraction-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        /* Services */
+        .services {
+            padding: 50px 0;
+            background-color: #fff;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 20px 10px;
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+        }
+
+        .service-item:hover {
+            border-color: var(--primary-color);
+            background-color: #f0fdf4;
+        }
+
+        .service-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .service-item span {
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2b2b;
+            color: #ccc;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-4, .attraction-grid, .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-4, .attraction-grid, .footer-grid, .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .news-item {
+                flex-direction: column;
+            }
+            .news-date {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100%;
+                text-align: left;
+                display: flex;
+                align-items: center;
+            }
+            .news-date .day { margin-right: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <span>欢迎访问黑龙江宾县官方网站</span>
+                <span>今天是：2023年10月27日</span>
+            </div>
+        </div>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/></svg>
+                <span>宾县综合门户</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">走进宾县</a></li>
+                    <li><a href="#">政务公开</a></li>
+                    <li><a href="#">旅游宾县</a></li>
+                    <li><a href="#">特产美食</a></li>
+                    <li><a href="#">招商引资</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>中国最美乡村·哈尔滨宾县</h1>
+                <p>宾县位于黑龙江省南部，松花江中游南岸，哈尔滨市东南部。这里山清水秀，资源丰富，是理想的生态旅游和投资兴业之地。</p>
+                <div>
+                    <a href="#" class="btn btn-primary">了解宾县</a>
+                    <a href="#" class="btn btn-outline" style="color:white; border-color:white; margin-left:10px;">旅游攻略</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access -->
+        <section class="quick-access">
+            <div class="container">
+                <div class="grid-4">
+                    <div class="access-card">
+                        <div class="access-icon">🏛️</div>
+                        <h3>政务大厅</h3>
+                        <p>在线办事、预约咨询</p>
+                    </div>
+                    <div class="access-card">
+                        <div class="access-icon">🚌</div>
+                        <h3>交通出行</h3>
+                        <p>客运时刻表、路况查询</p>
+                    </div>
+                    <div class="access-card">
+                        <div class="access-icon">🏞️</div>
+                        <h3>旅游服务</h3>
+                        <p>景点门票、酒店预订</p>
+                    </div>
+                    <div class="access-card">
+                        <div class="access-icon">📞</div>
+                        <h3>便民电话</h3>
+                        <p>生活服务、紧急求助</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Info Section -->
+        <section class="main-content">
+            <div class="container content-grid">
+                <!-- Left Column: News -->
+                <article class="news-section">
+                    <div class="news-header">
+                        <h2 class="section-title">宾县新闻</h2>
+                        <a href="#" style="color:var(--primary-color); font-size:0.9rem;">查看更多 &raquo;</a>
+                    </div>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <div class="news-date">
+                                <span class="day">27</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-info">
+                                <h3>宾县召开2023年秋季农业生产工作会议</h3>
+                                <p>会议强调要深入贯彻落实中央及省委农村工作会议精神，坚决扛稳粮食安全政治责任...</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-date">
+                                <span class="day">25</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-info">
+                                <h3>哈尔滨地铁2号线延伸至宾县：打造半小时生活圈</h3>
+                                <p>随着最新线路规划图的公布，宾县正式纳入哈尔滨都市圈核心交通网络，发展迎来新机遇。</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-date">
+                                <span class="day">22</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-info">
+                                <h3>宾县“冰雪大世界”筹备工作全面启动</h3>
+                                <p>为迎接2024年冰雪旅游季，相关部门已开始对二龙山滑雪场进行升级改造。</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-date">
+                                <span class="day">20</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-info">
+                                <h3>招商引资大会在宾县成功举办，签约项目总投资额超百亿</h3>
+                                <p>此次大会吸引了众多知名企业代表参会，涵盖现代农业、生物医药及文化旅游等领域。</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Right Column: Sidebar -->
+                <aside>
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">热门专题</h3>
+                        <ul class="hot-list">
+                            <li><a href="#"><span class="rank-num top-1">1</span>二龙山滑雪场</span></a></li>
+                            <li><a href="#"><span class="rank-num top-2">2</span>大顶山森林公园</span></a></li>
+                            <li><a href="#"><span class="rank-num top-3">3</span>宾县老酒</span></a></li>
+                            <li><a href="#"><span class="rank-num">4</span>2024年春节活动</span></a></li>
+                            <li><a href="#"><span class="rank-num">5</span>乡村特色产业</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">政府公告</h3>
+                        <ul class="hot-list">
+                            <li><a href="#">关于开展全县安全生产大检查的通知</a></li>
+                            <li><a href="#">宾县2024年中小学招生工作实施方案</a></li>
+                            <li><a href="#">关于规范城区停车秩序的通告</a></li>
+                            <li><a href="#">宾县气象台发布大风蓝色预警信号</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">在线咨询</h3>
+                        <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">如果您对宾县的投资环境、旅游服务或政务办理有疑问，请点击咨询。</p>
+                        <a href="#" class="btn btn-primary" style="width:100%;">提交咨询</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Attractions Section -->
+        <section class="attractions">
+            <div class="container">
+                <h2 class="section-title" style="text-align:center;">宾县旅游推荐</h2>
+                <div class="attraction-grid">
+                    <article class="attraction-card">
+                        <img src="https://picsum.photos/seed/longshan/400/300.jpg" alt="二龙山滑雪场" class="attraction-img">
+                        <div class="attraction-body">
+                            <h3>二龙山滑雪场</h3>
+                            <p>国家4A级旅游景区，集滑雪、滑道、滑雪圈、雪地摩托于一体，是北方冬季旅游的首选之地。</p>
+                            <span class="attraction-tag">冰雪运动</span>
+                        </div>
+                    </article>
+                    <article class="attraction-card">
+                        <img src="https://picsum.photos/seed/dading/400/300.jpg" alt="大顶山森林公园" class="attraction-img">
+                        <div class="attraction-body">
+                            <h3>大顶山森林公园</h3>
+                            <p>拥有丰富的森林资源和多样的野生动物，夏季避暑纳凉，秋季观红叶，景色宜人。</p>
+                            <span class="attraction-tag">自然生态</span>
+                        </div>
+                    </article>
+                    <article class="attraction-card">
+                        <img src="https://picsum.photos/seed/binzhou/400/300.jpg" alt="宾州古城" class="attraction-img">
+                        <div class="attraction-body">
+                            <h3>宾州古城</h3>
+                            <p>历史悠久的商贸重镇，保留了大量清末民初的建筑风格，充满浓郁的关东文化气息。</p>
+                            <span class="attraction-tag">历史文化</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title" style="text-align:center; border:none; padding:0; margin-bottom:30px;">便民服务</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <span>社保查询</span>
+                    </div>
+                    <div class="service-item">
+                        <span>公积金</span>
+                    </div>
+                    <div class="service-item">
+                        <span>不动产登记</span>
+                    </div>
+                    <div class="service-item">
+                        <span>车辆违章查询</span>
+                    </div>
+                    <div class="service-item">
+                        <span>水费电费缴纳</span>
+                    </div>
+                    <div class="service-item">
+                        <span>人才招聘</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于宾县</h4>
+                    <p>宾县隶属于黑龙江省哈尔滨市，地处松花江中游南岸，哈尔滨市东南部。总面积3846平方公里，辖14个镇、2个乡。</p>
+                    <p>这里是著名的“三花五罗”鱼类产地，也是中国民间艺术之乡。我们致力于为您提供全面、及时、准确的地方资讯服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">县政府领导</a></li>
+                        <li><a href="#">机构设置</a></li>
+                        <li><a href="#">政策文件</a></li>
+                        <li><a href="#">人事信息</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>旅游指南</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">景点介绍</a></li>
+                        <li><a href="#">特色美食</a></li>
+                        <li><a href="#">住宿推荐</a></li>
+                        <li><a href="#">交通指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li>地址：黑龙江省哈尔滨市宾县宾州镇</li>
+                        <li>电话：0451-12345678</li>
+                        <li>邮箱：info@binxian.gov.cn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 黑龙江宾县官方网站 版权所有 | 鲁ICP备xxxxxxxx号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
