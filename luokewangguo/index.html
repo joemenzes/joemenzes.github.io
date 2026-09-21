@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洛克王国悟空辅助 - 智能挂机脚本与高效练级攻略</title>
+    <meta name="description" content="提供专业的洛克王国悟空辅助工具、自动练级脚本及安全使用指南。包含技能连招设置、资源获取效率优化及账号安全防封提示，帮助玩家高效提升战力。">
+    <meta name="keywords" content="洛克王国悟空辅助, 悟空练级脚本, 洛克王国挂机工具, 悟空技能配置, 洛克王国攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #f5a623;
+            --primary-hover: #d48806;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-color: #e1e4e8;
+            --code-bg: #282c34;
+            --code-text: #abb2bf;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 40px 0;
+        }
+
+        /* 通用区块样式 */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+        }
+
+        /* 功能特性 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* 使用教程 */
+        .tutorial-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 24px;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .code-block {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 20px;
+            border-radius: 8px;
+            font-family: "Consolas", "Monaco", monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-label {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            border-bottom-left-radius: 8px;
+        }
+
+        /* 安全提示 */
+        .security-alert {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .security-alert h4 {
+            color: #856404;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 常见问题 */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #fafafa;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            color: var(--text-sub);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .tutorial-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">悟空<span>辅助</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">功能介绍</a></li>
+                    <li><a href="#tutorial">使用教程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-download">立即下载</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>洛克王国悟空辅助</h1>
+            <p>全自动练级、智能挂机、资源高效获取。专为洛克王国悟空职业打造的辅助工具，解放双手，轻松称霸宠物园。</p>
+            <div style="display: flex; justify-content: center; gap: 15px;">
+                <a href="#" class="btn-download" style="background-color: #fff; color: var(--primary-color);">查看演示</a>
+                <a href="#" class="btn-download" style="background-color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);">阅读攻略</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>全天候在线</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>安全防封</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10x</h3>
+                    <p>练级效率</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 功能介绍 -->
+        <section id="features">
+            <div class="section-header">
+                <h2>核心功能特性</h2>
+                <p>专为悟空职业设计的全方位辅助系统，涵盖战斗、练级、资源收集全流程</p>
+            </div>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>智能战斗连招</h3>
+                    <p>内置悟空职业技能树，自动识别对手属性，智能切换克制技能，最大化战斗收益。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>自动寻路挂机</h3>
+                    <p>支持指定地图自动巡逻，自动寻找可捕捉或可击败的宠物，无需手动操作。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>资源自动回收</h3>
+                    <p>练级过程中自动拾取掉落道具、经验果、金币，告别繁琐的背包整理工作。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>自定义任务脚本</h3>
+                    <p>支持录制和编辑任务流程，无论是日常任务还是周末活动均可一键执行。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>行为模拟算法</h3>
+                    <p>采用高级行为模拟技术，模拟真人操作习惯，有效降低被系统检测的风险。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>实时数据监控</h3>
+                    <p>后台监控练级效率、经验获取率及装备掉落情况，提供可视化的数据报表。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 使用教程 -->
+        <section id="tutorial">
+            <div class="section-header">
+                <h2>快速上手指南</h2>
+                <p>简单的三步设置，即可开启高效的挂机之旅</p>
+            </div>
+            <div class="tutorial-container">
+                <div class="step-list">
+                    <div class="step-item">
+                        <span class="step-title">第一步：登录与配置</span>
+                        <p>下载并安装悟空辅助客户端，登录游戏后启动辅助。在主界面选择“悟空职业”，并导入您习惯的技能加点方案。</p>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-title">第二步：设置目标地点</span>
+                        <p>在地图列表中选择目标练级区域（推荐：宠物园-迷雾森林或皇家园林）。设置挂机时长和自动回城条件。</p>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-title">第三步：启动与监控</span>
+                        <p>点击“开始挂机”，辅助将接管角色移动和战斗。您可以随时切换窗口查看进度，或通过快捷键暂停/继续。</p>
+                    </div>
+                    <div class="security-alert">
+                        <h4>⚠️ 账号安全提示</h4>
+                        <p style="margin-bottom:0; font-size: 0.9rem;">请勿在公共网络环境下长时间高强度挂机。建议每挂机4-6小时下线休息一次，以模拟真人作息规律。</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px;">技能配置示例代码</h3>
+                    <div class="code-block">
+                        <span class="code-label">悟空技能配置</span>
+                        <pre>
+[悟空_技能配置]
+技能1 = 火眼金睛 (优先级: 1, 冷却: 0)
+技能2 = 碎空裂地 (优先级: 2, 冷却: 2)
+技能3 = 钢铁之躯 (优先级: 3, 冷却: 5)
+技能4 = 悟空降临 (优先级: 4, 冷却: 10)
+
+[战斗策略]
+优先攻击 = 弱点属性
+战斗结束 = 自动寻路
+生命值 < 30% = 自动使用回血药</pre>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 10px;">常见练级地图推荐</h4>
+                        <ul style="font-size: 0.95rem; color: var(--text-sub);">
+                            <li>👉 <strong>新手期：</strong> 洛克城-天空城外围 (经验适中，难度低)</li>
+                            <li>👉 <strong>进阶期：</strong> 宠物园-迷雾森林 (高经验，资源丰富)</li>
+                            <li>👉 <strong>精英期：</strong> 皇家园林 (挑战性强，掉落稀有)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+                <p>关于洛克王国悟空辅助的使用疑问与解答</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">辅助是否安全？会被封号吗？</div>
+                    <div class="faq-answer">
+                        <p>我们的辅助采用行为模拟算法，能够有效模拟真人操作习惯。但请注意，任何第三方工具都存在一定风险，请务必遵守游戏规则，适度使用。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持哪些版本的洛克王国？</div>
+                    <div class="faq-answer">
+                        <p>目前支持主流的网页版客户端及部分客户端版本。请根据您的游戏客户端类型下载对应的辅助版本。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何更新技能加点？</div>
+                    <div class="faq-answer">
+                        <p>我们会在游戏版本更新后第一时间发布技能加点补丁。您可以在软件内的“更新中心”直接下载最新配置包。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">遇到卡顿或无法寻路怎么办？</div>
+                    <div class="faq-answer">
+                        <p>请检查您的网络连接是否稳定。如果问题依旧，请尝试关闭辅助，重新登录游戏后再启动辅助，或联系客服反馈。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>悟空辅助</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">专注于为洛克王国玩家提供最稳定、最高效的辅助工具。致力于打造公平、健康的游戏环境。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">下载客户端</a></li>
+                        <li><a href="#">技能加点大全</a></li>
+                        <li><a href="#">地图资源分布</a></li>
+                        <li><a href="#">版本更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与帮助</h4>
+                    <ul>
+                        <li><a href="#">使用教程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 洛克王国悟空辅助工具. 仅供学习交流使用，请勿用于非法用途。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target){
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
