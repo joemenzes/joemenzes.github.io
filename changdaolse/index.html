@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="倡导绿色生活 - 探索可持续生活方式，从日常环保习惯到低碳出行，提供实用的节能技巧、垃圾分类指南及环保产品推荐。">
+    <meta name="keywords" content="倡导绿色生活,环保生活,低碳生活,垃圾分类,节能技巧,可持续生活">
+    <title>倡导绿色生活 - 可持续生活方式与环保指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --light-green: #E8F5E9;
+            --accent-green: #66BB6A;
+            --text-dark: #1B1B1B;
+            --text-gray: #555555;
+            --bg-white: #FFFFFF;
+            --bg-off-white: #F9F9F9;
+            --border-color: #EEEEEE;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-off-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-green);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-cta {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background-color: #1B5E20;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, #1B5E20 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: #E8F5E9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Quick Actions Grid */
+        .quick-actions {
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .action-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.15);
+        }
+
+        .action-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
+
+        .action-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .action-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--bg-white);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .guide-card {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .guide-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .guide-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .guide-content {
+            padding: 25px;
+        }
+
+        .guide-tag {
+            display: inline-block;
+            background-color: var(--light-green);
+            color: var(--primary-green);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .guide-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .guide-content p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more:hover {
+            gap: 8px;
+        }
+
+        /* Daily Habits (List Style) */
+        .habits-section {
+            background-color: var(--bg-off-white);
+        }
+
+        .habits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .habit-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border-left: 4px solid var(--accent-green);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .habit-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(46, 125, 50, 0.2);
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .habit-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .habit-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        details:last-child {
+            border-bottom: none;
+        }
+
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            font-weight: 300;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            margin-top: 15px;
+            color: var(--text-gray);
+            padding-left: 5px;
+            border-left: 2px solid var(--light-green);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 30px auto 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: var(--text-dark);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+                <span>绿意生活</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#guide">生活指南</a>
+                <a href="#habits">日常习惯</a>
+                <a href="#faq">常见问题</a>
+                <a href="#community">加入社区</a>
+            </nav>
+            <a href="#join" class="nav-cta">开始行动</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>倡导绿色生活<br>守护我们的共同家园</h1>
+                <p>从每一次选择开始，减少碳足迹，拒绝浪费。这里有实用的环保指南、低碳生活技巧和绿色产品推荐，助您轻松融入可持续生活方式。</p>
+                <a href="#guide" class="nav-cta" style="background: white; color: var(--primary-green);">探索绿色指南</a>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>1.5亿+</h3>
+                        <p>年度参与人次</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>低碳行动方案</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50%</h3>
+                        <p>家庭碳排放降低</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="container quick-actions">
+            <div class="actions-grid">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2.69l5.74 5.74c1.29 1.29 1.29 3.39 0 4.68L12 22.31 6.26 16.56c-1.29-1.29-1.29-3.39 0-4.68L12 2.69z"></path>
+                        </svg>
+                    </div>
+                    <h3>垃圾分类</h3>
+                    <p>了解四色分类标准，正确投放垃圾</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M2 12h20"></path>
+                        </svg>
+                    </div>
+                    <h3>低碳出行</h3>
+                    <p>推荐步行、骑行与公共交通方案</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                            <line x1="16" y1="8" x2="2" y2="22"></line>
+                            <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>节能减排</h3>
+                    <p>家庭节电节水实用小技巧</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>环保购物</h3>
+                    <p>选择可持续材料与可循环产品</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section guide-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>绿色生活指南</h2>
+                    <p>掌握核心环保知识，将可持续理念融入生活的方方面面</p>
+                </div>
+                <div class="guide-grid">
+                    <article class="guide-card">
+                        <img src="https://picsum.photos/seed/eco1/400/250" alt="低碳饮食" class="guide-img">
+                        <div class="guide-content">
+                            <span class="guide-tag">饮食篇</span>
+                            <h3>低碳饮食与减少食物浪费</h3>
+                            <p>了解植物基饮食对环境的影响，学习如何规划一周餐单以减少剩菜，通过“光盘行动”降低家庭碳足迹。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <img src="https://picsum.photos/seed/eco2/400/250" alt="旧物改造" class="guide-img">
+                        <div class="guide-content">
+                            <span class="guide-tag">生活篇</span>
+                            <h3>旧物改造与循环利用</h3>
+                            <p>旧衣、旧书如何处理？探索DIY改造创意，将废弃物品转化为家居装饰或实用工具，延长物品生命周期。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <img src="https://picsum.photos/seed/eco3/400/250" alt="绿色家居" class="guide-img">
+                        <div class="guide-content">
+                            <span class="guide-tag">家居篇</span>
+                            <h3>打造绿色健康家居环境</h3>
+                            <p>选择环保建材与无毒清洁剂，利用自然光与通风改善室内空气质量，营造健康舒适的居住空间。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Habits Section -->
+        <section id="habits" class="section habits-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>每日微行动</h2>
+                    <p>不需要宏大的计划，只需改变几个微小习惯，就能产生巨大影响</p>
+                </div>
+                <div class="habits-list">
+                    <div class="habit-item">
+                        <div class="habit-num">01</div>
+                        <div class="habit-info">
+                            <h4>自带购物袋</h4>
+                            <p>去超市或菜市场时，随身携带可重复使用的布袋或购物篮，减少一次性塑料袋的使用。</p>
+                        </div>
+                    </div>
+                    <div class="habit-item">
+                        <div class="habit-num">02</div>
+                        <div class="habit-info">
+                            <h4>随手关灯断电</h4>
+                            <p>离开房间或长时间不使用电器时，拔掉插头或关闭电源，避免待机能耗，每月可节省不少电费。</p>
+                        </div>
+                    </div>
+                    <div class="habit-item">
+                        <div class="habit-num">03</div>
+                        <div class="habit-info">
+                            <h4>冷水洗衣</h4>
+                            <p>使用冷水洗涤衣物，不仅对衣物损伤小，还能显著降低洗衣机的能耗，是简单有效的节能方式。</p>
+                        </div>
+                    </div>
+                    <div class="habit-item">
+                        <div class="habit-num">04</div>
+                        <div class="habit-info">
+                            <h4>双面打印</h4>
+                            <p>在工作中，将打印机设置为双面打印模式，既节省纸张，又降低了森林砍伐的压力。</p>
+                        </div>
+                    </div>
+                    <div class="habit-item">
+                        <div class="habit-num">05</div>
+                        <div class="habit-info">
+                            <h4>减少一次性餐具</h4>
+                            <p>出门在外自带水杯和餐具，拒绝使用一次性筷子、纸杯和塑料勺，减少白色污染。</p>
+                        </div>
+                    </div>
+                    <div class="habit-item">
+                        <div class="habit-num">06</div>
+                        <div class="habit-info">
+                            <h4>优先公共交通</h4>
+                            <p>短途出行优先选择步行或骑行，中长途优先选择地铁、公交等公共交通工具，减少私家车出行。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于绿色生活，您可能关心的几个问题</p>
+                </div>
+                <div class="faq-container">
+                    <details>
+                        <summary>垃圾分类的标准是什么？</summary>
+                        <p>一般分为可回收物、厨余垃圾、有害垃圾和其他垃圾。可回收物包括废纸、塑料、玻璃、金属和布料；厨余垃圾指易腐烂的生物质废弃物；有害垃圾包括废电池、废灯管、废药品等；其他垃圾则指难以回收的废弃物。</p>
+                    </details>
+                    <details>
+                        <summary>在家如何减少碳排放？</summary>
+                        <p>可以从节约用水用电开始，使用节能家电；减少肉类消费，多吃蔬菜；购买本地当季食物，减少运输碳排放；选择公共交通或骑行出行；减少使用一次性用品等。</p>
+                    </details>
+                    <details>
+                        <summary>环保产品一定更贵吗？</summary>
+                        <p>不一定。虽然部分环保产品（如有机食品）价格较高，但许多环保行为（如自带杯、双面打印）不仅环保，还能为用户节省开支。长期来看，低碳生活方式有助于降低生活成本。</p>
+                    </details>
+                    <details>
+                        <summary>个人力量对环保有多大影响？</summary>
+                        <p>积少成多，聚沙成塔。全球数十亿人的微小环保行为汇聚起来，将对减少污染、保护自然资源产生巨大而深远的影响。每一个人的选择都很重要。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section id="join" class="newsletter">
+            <div class="container">
+                <h2>加入绿色生活计划</h2>
+                <p>订阅我们的周刊，获取最新的环保资讯、生活技巧和活动信息。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！我们已将确认邮件发送至您的邮箱。');">
+                    <input type="email" placeholder="请输入您的电子邮箱地址" required>
+                    <button type="submit">立即订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>绿意生活</h3>
+                    <p>致力于推广可持续生活方式，连接每一位关注环境、热爱生活的伙伴。让我们一起行动，为地球减负。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">环保指南</a></li>
+                        <li><a href="#">活动报名</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源中心</h4>
+                    <ul>
+                        <li><a href="#">碳计算器</a></li>
+                        <li><a href="#">环保日历</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                        <li><a href="#">捐赠渠道</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：contact@greenlife.org</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：环保大道88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 绿意生活倡导中心. 保留所有权利. 本网站内容仅供学习与参考，不构成任何专业建议。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
